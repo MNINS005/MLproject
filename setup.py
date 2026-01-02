@@ -12,11 +12,11 @@ def get_requirements(file_path: str) -> List[str]:
     return requirements
 
 setup(
-    name="MLproject",
+    name="ml-project",
     version="0.1.0",
     author="Sharma",
     author_email="sprince51060@gmail.com",
     packages=find_packages(),
     install_requires=get_requirements("requirements.txt"),
-
+    python_requires=">=3.8",
 )
