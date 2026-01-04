@@ -24,6 +24,10 @@ class DataIngestion:
         logging.info("Data Ingestion method started")
         try:
             df=pd.read_csv('notebook/Data/StudentsPerformance.csv')
+            df.columns = df.columns.str.replace(" ", "_")
+            df.columns = df.columns.str.replace("/", "_")
+
+
             logging.info("dataset read")
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
             df.to_csv(self.ingestion_config.raw_data_path,index=False)
